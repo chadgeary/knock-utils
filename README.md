@@ -1,5 +1,5 @@
 # Reference
-knockd clients (bash and powershell)
+[knock](https://github.com/jvinet/knock) clients (bash and powershell)
 
 ```
 # syntax (use knock.ps1 for powershell)
