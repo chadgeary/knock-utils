@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+use strict;
+use warnings;
+use IO::Socket::INET;
 
 # first and second args must be defined
 if (! defined $ARGV[0]
@@ -17,9 +20,8 @@ my ($target, $targetsshport) = split(/:/, $ARGV[0], 2);
 my @protoports = split(/,/, $ARGV[1], 64);
 
 # split protocol and port pairs
-foreach $protoport (@protoports) {
+foreach my $protoport (@protoports) {
 	my @protoport = split(/:/, $protoport, 2);
-	my $proto = @protoport[0];
-	my $port = @protoport[1];
-	print "$port\n";
+	my $proto = $protoport[0];
+	my $port = $protoport[1];
 }
