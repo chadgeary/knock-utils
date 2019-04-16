@@ -2,7 +2,7 @@
 knockd clients (bash and powershell)
 
 ```
-# bash
+# syntax (use knock.ps1 for powershell)
 ./knock <target>:<targetsshport> <protocol1>:<port1>,<protocol2>:<port2>...
 
 # example
