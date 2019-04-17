@@ -24,8 +24,14 @@ foreach my $protoport (@protoports) {
 	my @protoport = split(/:/, $protoport, 2);
 	my $proto = $protoport[0];
 	my $port = $protoport[1];
-	print "$proto\n$port\n$target\n";
-	my $packet = IO::Socket::INET->new(Proto=>"$proto",PeerPort=>"$port",PeerAddr=>"$target",Type=>SOCK_DGRAM);
-	$packet->send("1");
+	print "knocking: $target:$proto:$port\n";
+	if ($proto eq "udp") {
+		my $packet = IO::Socket::INET->new(Proto=>"$proto",PeerPort=>"$port",PeerAddr=>"$target",Type=>SOCK_DGRAM);
+		$packet->send("1");
+	} else {
+		my $packet = IO::Socket::INET->new(Proto=>"$proto",PeerPort=>"$port",PeerAddr=>"$target");
+	}
 }
 
+# ssh command
+my $sshoutput = `ssh $target -p $targetsshport "uptime"`
