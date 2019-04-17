@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use IO::Socket::INET;
+use IO::Socket;
 
 # first and second args must be defined
 if (! defined $ARGV[0]
@@ -24,4 +24,8 @@ foreach my $protoport (@protoports) {
 	my @protoport = split(/:/, $protoport, 2);
 	my $proto = $protoport[0];
 	my $port = $protoport[1];
+	print "$proto\n$port\n$target\n";
+	my $packet = IO::Socket::INET->new(Proto=>"$proto",PeerPort=>"$port",PeerAddr=>"$target",Type=>SOCK_DGRAM);
+	$packet->send("1");
 }
+
