@@ -2,7 +2,7 @@
 [knock](https://github.com/jvinet/knock) clients (bash and powershell)
 
 ```
-# syntax (use knock.ps1 for powershell)
+# syntax (use knock.ps1 for powershell, knock.pl for perl)
 ./knock <target>:<targetsshport> <protocol1>:<port1>,<protocol2>:<port2>...
 
 # example
