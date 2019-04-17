@@ -1,5 +1,5 @@
 # Reference
-[knock](https://github.com/jvinet/knock) clients (bash and powershell)
+[knock](https://github.com/jvinet/knock) clients in different languages (currently bash powershell and perl)
 
 ```
 # syntax (use knock.ps1 for powershell, knock.pl for perl)
