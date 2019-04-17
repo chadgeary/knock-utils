@@ -19,12 +19,16 @@ my ($target, $targetsshport) = split(/:/, $ARGV[0], 2);
 # list from argv1
 my @protoports = split(/,/, $ARGV[1], 64);
 
-# split protocol and port pairs
+# loop through protoport pairs
 foreach my $protoport (@protoports) {
+	# split current protoport pair into list
 	my @protoport = split(/:/, $protoport, 2);
+	# first item in list is proto
 	my $proto = $protoport[0];
+	# second item in list is port
 	my $port = $protoport[1];
 	print "knocking: $target:$proto:$port\n";
+	# UDP sends datagram
 	if ($proto eq "udp") {
 		my $packet = IO::Socket::INET->new(Proto=>"$proto",PeerPort=>"$port",PeerAddr=>"$target",Type=>SOCK_DGRAM);
 		$packet->send("1");
@@ -33,5 +37,5 @@ foreach my $protoport (@protoports) {
 	}
 }
 
-# ssh command
+# ssh command message, because we're not adding a client here
 print "knocking complete, exiting.\nto connect, run: ssh $target -p $targetsshport"
