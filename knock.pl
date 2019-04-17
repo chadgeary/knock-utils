@@ -34,4 +34,4 @@ foreach my $protoport (@protoports) {
 }
 
 # ssh command
-my $sshoutput = `ssh $target -p $targetsshport "uptime"`
+print "knocking complete, exiting.\nto connect, run: ssh $target -p $targetsshport"
