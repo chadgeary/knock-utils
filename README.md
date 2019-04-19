@@ -1,8 +1,8 @@
 # Reference
-[knock](https://github.com/jvinet/knock) clients in different languages (currently bash powershell and perl)
+[knock](https://github.com/jvinet/knock) clients in different languages (bash powershell perl and python)
 
 ```
-# syntax (use knock.ps1 for powershell, knock.pl for perl)
+# syntax (use knock.ps1 for powershell, knock.pl for perl, knock.py for python)
 ./knock <target>:<targetsshport> <protocol1>:<port1>,<protocol2>:<port2>...
 
 # example
