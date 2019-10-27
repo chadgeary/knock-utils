@@ -8,3 +8,12 @@
 # example
 ./knock.sh cloudvm.chadg.net:4444 tcp:9876,udp:2222,udp:10101
 ```
+
+# Requires
+```
+# bash
+Debian-based (incl. Ubuntu) bash does not include net redirection (e.g. /dev/tcp doesn't exist).
+
+# powershell
+The ps1 script launches putty to connect to the remote host. May be worth changing to use native SSH now that its being included with windows.
+```
